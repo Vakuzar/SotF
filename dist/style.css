@@ -212,13 +212,37 @@ img { display: block; max-width: 100%; height: auto; }
 
 .actions { display: flex; align-items: center; gap: calc(16 * var(--u)); }
 
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: calc(10 * var(--u)) calc(20 * var(--u)); }
+
+.release {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(20 * var(--u));
+  margin: 0;
+  color: var(--accent);
+  font: 600 calc(17 * var(--u))/1.1 var(--font-ui);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+/* hairline between the genre and the release status */
+.release::before { content: ""; width: 1px; height: 1.1em; background: var(--line-strong); }
+
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
 .home .capsule { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
 .home .info { animation: rise .9s .15s cubic-bezier(.2, .7, .2, 1) both; }
 
+@media (max-width: 1000px) {
+  .meta { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .release { padding-left: calc(24 * var(--u)); } /* line up with the genre text after the star */
+  .release::before { display: none; }
+}
+
 @media (max-width: 640px) {
   .info { flex-direction: column; justify-content: center; gap: 22px; margin-top: 28px; }
-  .genre { font-size: 14px; letter-spacing: .16em; }
+  .meta { align-items: center; }
+  .release { padding-left: 0; }
+  .genre, .release { font-size: 14px; letter-spacing: .16em; }
   .socials a { width: 44px; height: 44px; }
   .btn { height: 44px; }
 }
