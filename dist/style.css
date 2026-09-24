@@ -68,11 +68,11 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* storyboard-style corner marks around the art */
 .capsule::before {
-  --l: 18px;
+  --l: calc(18 * var(--u, 1px));
   --t: 1px;
   content: "";
   position: absolute;
-  inset: -12px;
+  inset: calc(-12 * var(--u, 1px));
   pointer-events: none;
   background:
     linear-gradient(var(--line-strong) 0 0) top left / var(--l) var(--t),
@@ -89,30 +89,30 @@ img { display: block; max-width: 100%; height: auto; }
 .genre {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(12 * var(--u, 1px));
   margin: 0;
-  font: 600 clamp(15px, 1.25vw, 18px)/1.1 var(--font-ui);
+  font: 600 calc(17 * var(--u, 1px))/1.1 var(--font-ui);
   letter-spacing: .22em;
   text-transform: uppercase;
 }
 
-.star { flex: none; width: 12px; height: 12px; fill: var(--accent); }
+.star { flex: none; width: calc(12 * var(--u, 1px)); height: calc(12 * var(--u, 1px)); fill: var(--accent); }
 
-.socials { display: flex; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.socials { display: flex; gap: calc(10 * var(--u, 1px)); margin: 0; padding: 0; list-style: none; }
 
 .socials a {
   position: relative;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: calc(40 * var(--u, 1px));
+  height: calc(40 * var(--u, 1px));
   border-radius: 50%;
   background: var(--text);
   color: var(--bg);
   transition: background-color .2s, color .2s, transform .2s;
 }
 
-.socials svg { width: 19px; height: 19px; fill: currentColor; }
+.socials svg { width: calc(19 * var(--u, 1px)); height: calc(19 * var(--u, 1px)); fill: currentColor; }
 
 .socials a[href]:hover,
 .socials a[href]:focus-visible { background: var(--accent); color: var(--accent-ink); transform: translateY(-2px); }
@@ -145,27 +145,27 @@ img { display: block; max-width: 100%; height: auto; }
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 28px;
-  height: 40px;
-  padding: 1px 16px 0 22px;
+  gap: calc(28 * var(--u, 1px));
+  height: calc(40 * var(--u, 1px));
+  padding: 1px calc(16 * var(--u, 1px)) 0 calc(22 * var(--u, 1px));
   border-radius: 999px;
   background: var(--accent);
   color: var(--accent-ink);
-  font: 700 15px/1 var(--font-ui);
+  font: 700 calc(15 * var(--u, 1px))/1 var(--font-ui);
   letter-spacing: .16em;
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color .2s;
 }
 
-.btn svg { width: 18px; height: 18px; margin-top: -1px; transition: transform .2s; }
+.btn svg { width: calc(18 * var(--u, 1px)); height: calc(18 * var(--u, 1px)); margin-top: -1px; transition: transform .2s; }
 .btn:hover { background: var(--accent-hover); }
 .btn:hover svg { transform: translateX(3px); }
 
 .site-foot {
   padding: 0 var(--gutter) 26px;
   color: var(--muted);
-  font: 500 12px/1 var(--font-ui);
+  font: 500 clamp(12px, .55vw, 14px)/1 var(--font-ui);
   letter-spacing: .18em;
   text-align: center;
   text-transform: uppercase;
@@ -176,29 +176,39 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* ---------- home: the capsule ---------- */
 
-.home { display: grid; grid-template: 1fr auto / minmax(0, 1fr); }
+.home {
+  --gutter: clamp(16px, 3vw, 72px);
+  display: grid;
+  grid-template: 1fr auto / minmax(0, 1fr);
+}
 
 .stage {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   place-items: center;
-  padding: clamp(32px, 7vh, 72px) var(--gutter) 32px;
+  padding: clamp(24px, 4svh, 56px) var(--gutter) clamp(16px, 2svh, 28px);
   background: radial-gradient(ellipse 60% 50% at 50% 45%, rgb(239 233 223 / .07), transparent 70%);
 }
 
-/* as big as possible while the whole page still fits on one screen */
-.capsule-block { width: min(100%, 1240px, max(480px, calc((100svh - 250px) * var(--capsule-ratio)))); }
+/* The capsule fills the screen: as wide as the window allows while the row underneath still fits. */
+.capsule-block {
+  container-type: inline-size;
+  /* UI scale for everything around the art: 1px beside a ~1240px capsule, growing to 1.5px on big screens */
+  --u: clamp(1px, 0.58px + 0.034cqi, 1.5px);
+  /* 140px + 6svh ≈ what the row + footer need below the art; it grows with the screen like the UI does */
+  width: min(100%, 2880px, max(480px, calc((94svh - 140px) * var(--capsule-ratio))));
+}
 
 .info {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 18px 28px;
-  margin-top: 32px;
+  gap: calc(18 * var(--u)) calc(28 * var(--u));
+  margin-top: calc(30 * var(--u));
 }
 
-.actions { display: flex; align-items: center; gap: 16px; }
+.actions { display: flex; align-items: center; gap: calc(16 * var(--u)); }
 
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
 .home .capsule { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
@@ -213,7 +223,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* ---------- press kit ---------- */
 
-.wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); }
+.wrap { max-width: 1600px; margin: 0 auto; padding: 0 var(--gutter); }
 
 .kit-top {
   display: flex;
