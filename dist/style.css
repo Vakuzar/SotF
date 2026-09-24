@@ -5,9 +5,10 @@
   --muted: #9d968b;
   --line: rgb(239 233 223 / .12);
   --line-strong: rgb(239 233 223 / .3);
-  --accent: #e0513d;
-  --accent-hover: #ec6752;
-  --accent-ink: #140b09;
+  /* Shared with blueagavegames.com: agave blue, sampled from sunlit Agave tequilana leaves (OKLCH 0.74 0.05 222) */
+  --accent: #88b3c2;
+  --accent-hover: #9fc5d3;
+  --accent-ink: #09161a;
   --font-ui: "Barlow Condensed", "Arial Narrow", sans-serif;
   --font-body: "Barlow", system-ui, sans-serif;
   --gutter: clamp(20px, 4vw, 56px);
@@ -171,8 +172,9 @@ img { display: block; max-width: 100%; height: auto; }
   text-transform: uppercase;
 }
 
-.site-foot a { text-decoration: none; transition: color .2s; }
-.site-foot a:hover { color: var(--text); }
+.site-foot a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; transition: color .2s; }
+.site-foot a:hover { color: var(--accent); }
+.site-foot .agave { width: 1.2em; height: 1.2em; margin-top: -.2em; fill: currentColor; }
 
 /* ---------- home: the capsule ---------- */
 
