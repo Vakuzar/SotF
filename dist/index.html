@@ -1,39 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111714">
-  <meta name="description" content="Sword of the Frontier. A new adventure is on the horizon. Follow the beginning of the journey.">
   <title>Sword of the Frontier</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23111714'/%3E%3Cpath d='M16 3l3 5-2 13h-2L13 8zM9 22h14M16 22v6' stroke='%23d7b97c' stroke-width='2' fill='%23d7b97c'/%3E%3C/svg%3E">
+  <meta name="description" content="Sword of the Frontier is a survivor-like tower defense game.">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sword of the Frontier">
+  <meta property="og:description" content="A survivor-like tower defense game.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c0b0a'/%3E%3Cpath d='M16 3l2.6 4.2V19h-5.2V7.2z' fill='%23efe9df'/%3E%3Cpath d='M9 19.4h14v2.5H9z' fill='%23e0513d'/%3E%3Cpath d='M14.8 21.9h2.4v4.4h-2.4z' fill='%23efe9df'/%3E%3Ccircle cx='16' cy='27.7' r='1.9' fill='%23e0513d'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="page">
-    <header>
-      <a class="brand" href="#" aria-label="Sword of the Frontier home"><span class="brand-icon" aria-hidden="true">✦</span> SWORD OF THE FRONTIER</a>
-      <a class="nav-link" href="#about">THE JOURNEY <span aria-hidden="true">↗</span></a>
-    </header>
-    <main id="main">
-      <section class="hero" aria-labelledby="title">
-        <div class="eyebrow"><span></span> A NEW ADVENTURE ON THE HORIZON</div>
-        <p class="chapter">BEYOND THE KNOWN WORLD</p>
-        <h1 id="title">Sword <em>of the</em><br><span>Frontier</span></h1>
-        <div class="hero-bottom">
-          <p>Every frontier begins with a first step.<br>Yours is just ahead.</p>
-          <a class="button" href="#about">Discover the journey <span aria-hidden="true">↓</span></a>
+<body class="home">
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="i-steam" viewBox="0 0 24 24"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 0c.8 7.6 4.4 11.2 12 12-7.6.8-11.2 4.4-12 12-.8-7.6-4.4-11.2-12-12C7.6 11.2 11.2 7.6 12 0z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="stage">
+    <h1 class="sr-only">Sword of the Frontier</h1>
+
+    <div class="capsule-block">
+      <figure class="capsule">
+        <img src="assets/capsule.jpg" width="1402" height="649" alt="Capsule art sketch: a knight with a sword faces a horde of beasts beneath the Sword of the Frontier logo">
+      </figure>
+
+      <div class="info">
+        <p class="genre"><svg class="star" aria-hidden="true"><use href="#i-star"/></svg>Survivor-like Tower Defense</p>
+
+        <div class="actions">
+          <!-- Steam and Discord aren't live yet: add an href to turn them into real links. -->
+          <ul class="socials">
+            <li><a data-tip="Coming soon"><svg aria-hidden="true"><use href="#i-steam"/></svg><span class="sr-only">Steam (coming soon)</span></a></li>
+            <li><a href="https://x.com/EscuderoAndony" target="_blank" rel="noopener" data-tip="Follow on X"><svg aria-hidden="true"><use href="#i-x"/></svg><span class="sr-only">X</span></a></li>
+            <li><a data-tip="Coming soon"><svg aria-hidden="true"><use href="#i-discord"/></svg><span class="sr-only">Discord (coming soon)</span></a></li>
+          </ul>
+          <a class="btn" href="presskit.html">Press kit<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <div class="margin-note" aria-hidden="true">THE EDGE IS ONLY THE BEGINNING</div>
-      </section>
-      <section id="about" class="about" aria-labelledby="about-title">
-        <div class="section-label">01 / THE BEGINNING</div>
-        <div><h2 id="about-title">A world waiting<br>to be discovered.</h2><p>Sword of the Frontier is taking its first steps. This is the beginning of our journey—and the place to find more as the game takes shape.</p></div>
-        <aside><span class="small-star" aria-hidden="true">✦</span><h3>More on the horizon</h3><p>Game details and updates are coming. The adventure starts here.</p><span class="status">STAY TUNED</span></aside>
-      </section>
-    </main>
-    <footer><span>© <span id="year">2026</span> Sword of the Frontier</span><span>A NEW CHAPTER AWAITS.</span><a href="#">Back to top ↑</a></footer>
-  </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-foot">© 2026 <a href="https://blueagavegames.com" target="_blank" rel="noopener">Blue Agave Games</a></footer>
 </body>
 </html>
