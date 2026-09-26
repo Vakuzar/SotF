@@ -12,8 +12,8 @@
   --font-ui: "Barlow Condensed", "Arial Narrow", sans-serif;
   --font-body: "Barlow", system-ui, sans-serif;
   --gutter: clamp(20px, 4vw, 56px);
-  /* Capsule art width ÷ height (1402 × 649). Update this if the art's proportions change. */
-  --capsule-ratio: 2.1602;
+  /* Capsule art width ÷ height (1632 × 765). Update this if the art's proportions change. */
+  --capsule-ratio: 2.1333;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
